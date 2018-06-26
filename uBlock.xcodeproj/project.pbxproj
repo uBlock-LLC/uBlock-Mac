@@ -1,0 +1,1249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07F251AE012A29F4FA05F779 /* Pods_uBlockToolbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7298C58F21DF343E023F6BFB /* Pods_uBlockToolbar.framework */; };
+		712989AABE1F1134B6D8ADCB /* Pods_uBlock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2ADC464229EDEE31C6DF27 /* Pods_uBlock.framework */; };
+		824A5264C9F305A3C2683966 /* Pods_uBlockExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9C0625F941F737DCABA4B6 /* Pods_uBlockExtension.framework */; };
+		E207F550209747D1008DC607 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207F54F209747D1008DC607 /* AssetsManager.swift */; };
+		E207F55120975759008DC607 /* AssetDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F249D2092E6F6006B4EDE /* AssetDownloader.swift */; };
+		E207F5522097575B008DC607 /* AssetMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207F54D209729B9008DC607 /* AssetMerger.swift */; };
+		E217A8D720A2CC5B00DF0CF1 /* WhitelistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217A8D620A2CC5B00DF0CF1 /* WhitelistManager.swift */; };
+		E217A8D820A2CC5B00DF0CF1 /* WhitelistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217A8D620A2CC5B00DF0CF1 /* WhitelistManager.swift */; };
+		E217A8D920A2EE9700DF0CF1 /* FileManager+uBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A67852092FA4F00BD464F /* FileManager+uBlock.swift */; };
+		E217A8DA20A2EF1800DF0CF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278F434208A013500573C9B /* Constants.swift */; };
+		E217A8DC20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217A8DB20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift */; };
+		E217A8DD20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217A8DB20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift */; };
+		E217A8DE20A2FFE600DF0CF1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165620919FDA00202151 /* Observable.swift */; };
+		E217A8DF20A2FFE800DF0CF1 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165520919FD900202151 /* Event.swift */; };
+		E217A8E020A31F4500DF0CF1 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207F54F209747D1008DC607 /* AssetsManager.swift */; };
+		E217A8E120A31F4A00DF0CF1 /* AssetDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F249D2092E6F6006B4EDE /* AssetDownloader.swift */; };
+		E217A8E220A31F4C00DF0CF1 /* AssetMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207F54D209729B9008DC607 /* AssetMerger.swift */; };
+		E217A8E320A3214D00DF0CF1 /* FilterListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2588FA320A01B3D009ADDAA /* FilterListManager.swift */; };
+		E2201A8F20AD8E2D00F7CFB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2201A8E20AD8E2D00F7CFB5 /* AppDelegate.swift */; };
+		E2201A9320AD8E2D00F7CFB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2201A9220AD8E2D00F7CFB5 /* Assets.xcassets */; };
+		E2201A9620AD8E2D00F7CFB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2201A9420AD8E2D00F7CFB5 /* Main.storyboard */; };
+		E2201A9D20AD8EE800F7CFB5 /* LauncherApp.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = E2201A8C20AD8E2D00F7CFB5 /* LauncherApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2201A9F20AD8FDE00F7CFB5 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2201A9E20AD8FDE00F7CFB5 /* ServiceManagement.framework */; };
+		E229BA8A20A58DDB00F35740 /* FilterListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2588FA320A01B3D009ADDAA /* FilterListManager.swift */; };
+		E229BA8B20A58DDF00F35740 /* WhitelistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217A8D620A2CC5B00DF0CF1 /* WhitelistManager.swift */; };
+		E229BA8C20A58DE100F35740 /* WhitelistRulesMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E217A8DB20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift */; };
+		E229BA8F20A58E4900F35740 /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207F54F209747D1008DC607 /* AssetsManager.swift */; };
+		E229BA9020A58E4B00F35740 /* AssetDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27F249D2092E6F6006B4EDE /* AssetDownloader.swift */; };
+		E229BA9120A58E4E00F35740 /* AssetMerger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E207F54D209729B9008DC607 /* AssetMerger.swift */; };
+		E229BA9320A58F5A00F35740 /* UserPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = E229BA9220A58F5A00F35740 /* UserPref.swift */; };
+		E229BA9420A58F5A00F35740 /* UserPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = E229BA9220A58F5A00F35740 /* UserPref.swift */; };
+		E229BA9520A58F5A00F35740 /* UserPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = E229BA9220A58F5A00F35740 /* UserPref.swift */; };
+		E2359FAF20A465870055C403 /* PauseResumeBlockinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2359FAE20A465870055C403 /* PauseResumeBlockinManager.swift */; };
+		E2359FB020A465870055C403 /* PauseResumeBlockinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2359FAE20A465870055C403 /* PauseResumeBlockinManager.swift */; };
+		E2359FB120A467BE0055C403 /* PauseResumeBlockinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2359FAE20A465870055C403 /* PauseResumeBlockinManager.swift */; };
+		E23A67862092FA4F00BD464F /* FileManager+uBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A67852092FA4F00BD464F /* FileManager+uBlock.swift */; };
+		E244F79320983ADF00B37D53 /* FileManager+uBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23A67852092FA4F00BD464F /* FileManager+uBlock.swift */; };
+		E244F79520983C9D00B37D53 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165520919FD900202151 /* Event.swift */; };
+		E244F79620983C9F00B37D53 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165620919FDA00202151 /* Observable.swift */; };
+		E244F7AE2098B06C00B37D53 /* NSControl+uBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E244F7AD2098B06C00B37D53 /* NSControl+uBlock.swift */; };
+		E24FD66D20DA244B00DE663B /* ToolbarItemIcon-16pt.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E24FD66C20DA244B00DE663B /* ToolbarItemIcon-16pt.pdf */; };
+		E2588FA420A01B3D009ADDAA /* FilterListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2588FA320A01B3D009ADDAA /* FilterListManager.swift */; };
+		E2588FA920A02A80009ADDAA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7108B208E03E600E3752C /* Item.swift */; };
+		E2588FAA20A02A80009ADDAA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7108B208E03E600E3752C /* Item.swift */; };
+		E2588FAF20A05954009ADDAA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278F434208A013500573C9B /* Constants.swift */; };
+		E269283520BE6FC000421BF3 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E269283420BE6FC000421BF3 /* Util.swift */; };
+		E26E2293209AC871004AC4C2 /* SectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E2292209AC870004AC4C2 /* SectionDetailVC.swift */; };
+		E26E2295209ACA0A004AC4C2 /* WhitelistTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E2294209ACA0A004AC4C2 /* WhitelistTableCellView.swift */; };
+		E26E2299209AD549004AC4C2 /* FilterListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26E2298209AD549004AC4C2 /* FilterListTableCellView.swift */; };
+		E26E229B209AFAB4004AC4C2 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = E26E229A209AFAB4004AC4C2 /* Fonts */; };
+		E270FEC420B2A3E80053EDD6 /* String+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D69EC82099775B0012B58F /* String+Shortcuts.swift */; };
+		E278F40A2089D93A00573C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278F4092089D93A00573C9B /* AppDelegate.swift */; };
+		E278F40C2089D93A00573C9B /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278F40B2089D93A00573C9B /* MainVC.swift */; };
+		E278F4112089D93A00573C9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E278F40F2089D93A00573C9B /* Main.storyboard */; };
+		E278F435208A013500573C9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E278F434208A013500573C9B /* Constants.swift */; };
+		E27BB6FE20AC68A100544CD0 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27BB6FD20AC68A100544CD0 /* Util.swift */; };
+		E283EDA920A171C8008B471B /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = E283EDA820A171C7008B471B /* Assets */; };
+		E2A9F48D209C2DC2009F7923 /* uBlockInfo.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = E2A9F48C209C2DC1009F7923 /* uBlockInfo.rtfd */; };
+		E2B7106C208DA1FA00E3752C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B7106B208DA1FA00E3752C /* Assets.xcassets */; };
+		E2B7106E208DB16700E3752C /* SectionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7106D208DB16700E3752C /* SectionListVC.swift */; };
+		E2B71070208DB1C900E3752C /* SectionItemCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7106F208DB1C800E3752C /* SectionItemCollectionViewItem.swift */; };
+		E2B71072208DB25D00E3752C /* SectionItemCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B71071208DB25D00E3752C /* SectionItemCollectionViewItem.xib */; };
+		E2B71074208DB78100E3752C /* sections.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2B71073208DB78100E3752C /* sections.plist */; };
+		E2B71079208DBE2000E3752C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B71078208DBE2000E3752C /* SectionHeaderView.swift */; };
+		E2B7107C208DBE2800E3752C /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2B7107B208DBE2700E3752C /* SectionHeaderView.xib */; };
+		E2B71080208DC86200E3752C /* NSColor+uBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7107F208DC86200E3752C /* NSColor+uBlock.swift */; };
+		E2B71089208E03A500E3752C /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B71088208E03A500E3752C /* Section.swift */; };
+		E2B7108C208E03E600E3752C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7108B208E03E600E3752C /* Item.swift */; };
+		E2B7108F208E048600E3752C /* SectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7108E208E048600E3752C /* SectionHelper.swift */; };
+		E2C3165720919FDA00202151 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165520919FD900202151 /* Event.swift */; };
+		E2C3165820919FDA00202151 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165620919FDA00202151 /* Observable.swift */; };
+		E2C3165A2091CD6F00202151 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C316592091CD6F00202151 /* IntroVC.swift */; };
+		E2C3165C2091CF4700202151 /* Storyboard+uBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3165B2091CF4700202151 /* Storyboard+uBlock.swift */; };
+		E2C3165E20920CE000202151 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D4330E209060E00073624C /* AlertUtil.swift */; };
+		E2C31661209210FE00202151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2B7106B208DA1FA00E3752C /* Assets.xcassets */; };
+		E2CB9B79208F61EF004A5DFE /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CB9B78208F61EF004A5DFE /* PlaceholderTextView.swift */; };
+		E2D4330F209060E00073624C /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D4330E209060E00073624C /* AlertUtil.swift */; };
+		E2D4331520907DD30073624C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278F423208A008800573C9B /* Cocoa.framework */; };
+		E2D4331820907DD40073624C /* blockerList.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D4331720907DD30073624C /* blockerList.json */; };
+		E2D4331A20907DD40073624C /* ContentBlockerRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D4331920907DD40073624C /* ContentBlockerRequestHandler.swift */; };
+		E2D4331F20907DD40073624C /* uBlockExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2D4331420907DD30073624C /* uBlockExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2D4332820907E8C0073624C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278F423208A008800573C9B /* Cocoa.framework */; };
+		E2D4332B20907E8C0073624C /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D4332A20907E8C0073624C /* SafariExtensionHandler.swift */; };
+		E2D4332D20907E8C0073624C /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D4332C20907E8C0073624C /* SafariExtensionViewController.swift */; };
+		E2D4333020907E8C0073624C /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2D4332E20907E8C0073624C /* SafariExtensionViewController.xib */; };
+		E2D4333320907E8C0073624C /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = E2D4333220907E8C0073624C /* script.js */; };
+		E2D4333920907E8C0073624C /* uBlockToolbar.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E2D4332720907E8C0073624C /* uBlockToolbar.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E2D43342209093FF0073624C /* AppMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D43341209093FF0073624C /* AppMenuBar.swift */; };
+		E2D433462090C1930073624C /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D433452090C1930073624C /* MainWindowController.swift */; };
+		E2D69EC92099775B0012B58F /* String+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D69EC82099775B0012B58F /* String+Shortcuts.swift */; };
+		E2D69ECB2099CA1C0012B58F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D69ECA2099CA1C0012B58F /* Button.swift */; };
+		E2E8B23920BD25B5000C64D1 /* PingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E8B23820BD25B5000C64D1 /* PingDataManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2D4331D20907DD40073624C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E278F3FE2089D93A00573C9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2D4331320907DD30073624C;
+			remoteInfo = uBlockExtension;
+		};
+		E2D4333720907E8C0073624C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E278F3FE2089D93A00573C9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2D4332620907E8C0073624C;
+			remoteInfo = uBlockToolbar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E2201A9C20AD8ECD00F7CFB5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				E2201A9D20AD8EE800F7CFB5 /* LauncherApp.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E278F432208A008800573C9B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E2D4333920907E8C0073624C /* uBlockToolbar.appex in Embed App Extensions */,
+				E2D4331F20907DD40073624C /* uBlockExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		22E35B14E1C5FC23F473DE7E /* Pods-uBlockExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uBlockExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uBlockExtension/Pods-uBlockExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		280805F713C30D0E4E9ED206 /* Pods-uBlockToolbar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uBlockToolbar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uBlockToolbar/Pods-uBlockToolbar.debug.xcconfig"; sourceTree = "<group>"; };
+		432F3B9F7D802337BCF1EBC2 /* Pods-uBlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uBlock.release.xcconfig"; path = "Pods/Target Support Files/Pods-uBlock/Pods-uBlock.release.xcconfig"; sourceTree = "<group>"; };
+		4D03617AB7A23E9B349CD75F /* Pods-uBlockToolbar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uBlockToolbar.release.xcconfig"; path = "Pods/Target Support Files/Pods-uBlockToolbar/Pods-uBlockToolbar.release.xcconfig"; sourceTree = "<group>"; };
+		7298C58F21DF343E023F6BFB /* Pods_uBlockToolbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uBlockToolbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		876E0FA70B37F4CBADCC7AB8 /* Pods-uBlock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uBlock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uBlock/Pods-uBlock.debug.xcconfig"; sourceTree = "<group>"; };
+		CF2ADC464229EDEE31C6DF27 /* Pods_uBlock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uBlock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E207F54D209729B9008DC607 /* AssetMerger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetMerger.swift; sourceTree = "<group>"; };
+		E207F54F209747D1008DC607 /* AssetsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		E217A8D620A2CC5B00DF0CF1 /* WhitelistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitelistManager.swift; sourceTree = "<group>"; };
+		E217A8DB20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitelistRulesMaker.swift; sourceTree = "<group>"; };
+		E2201A8C20AD8E2D00F7CFB5 /* LauncherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2201A8E20AD8E2D00F7CFB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2201A9220AD8E2D00F7CFB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2201A9520AD8E2D00F7CFB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2201A9720AD8E2D00F7CFB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2201A9820AD8E2D00F7CFB5 /* LauncherApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApp.entitlements; sourceTree = "<group>"; };
+		E2201A9E20AD8FDE00F7CFB5 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		E229BA9220A58F5A00F35740 /* UserPref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPref.swift; sourceTree = "<group>"; };
+		E2359FAE20A465870055C403 /* PauseResumeBlockinManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseResumeBlockinManager.swift; sourceTree = "<group>"; };
+		E23A67852092FA4F00BD464F /* FileManager+uBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+uBlock.swift"; sourceTree = "<group>"; };
+		E244F7AD2098B06C00B37D53 /* NSControl+uBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSControl+uBlock.swift"; sourceTree = "<group>"; };
+		E24FD66C20DA244B00DE663B /* ToolbarItemIcon-16pt.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ToolbarItemIcon-16pt.pdf"; sourceTree = "<group>"; };
+		E2588FA320A01B3D009ADDAA /* FilterListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListManager.swift; sourceTree = "<group>"; };
+		E269283420BE6FC000421BF3 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		E26E2292209AC870004AC4C2 /* SectionDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionDetailVC.swift; sourceTree = "<group>"; };
+		E26E2294209ACA0A004AC4C2 /* WhitelistTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitelistTableCellView.swift; sourceTree = "<group>"; };
+		E26E2298209AD549004AC4C2 /* FilterListTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterListTableCellView.swift; sourceTree = "<group>"; };
+		E26E229A209AFAB4004AC4C2 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		E278F4062089D93A00573C9B /* uBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E278F4092089D93A00573C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E278F40B2089D93A00573C9B /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		E278F4102089D93A00573C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E278F4122089D93B00573C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E278F4132089D93B00573C9B /* uBlock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uBlock.entitlements; sourceTree = "<group>"; };
+		E278F423208A008800573C9B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E278F434208A013500573C9B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E27BB6FD20AC68A100544CD0 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		E27F249D2092E6F6006B4EDE /* AssetDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDownloader.swift; sourceTree = "<group>"; };
+		E283EDA820A171C7008B471B /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
+		E2A9F48C209C2DC1009F7923 /* uBlockInfo.rtfd */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; path = uBlockInfo.rtfd; sourceTree = "<group>"; };
+		E2B7106B208DA1FA00E3752C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2B7106D208DB16700E3752C /* SectionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionListVC.swift; sourceTree = "<group>"; };
+		E2B7106F208DB1C800E3752C /* SectionItemCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionItemCollectionViewItem.swift; sourceTree = "<group>"; };
+		E2B71071208DB25D00E3752C /* SectionItemCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionItemCollectionViewItem.xib; sourceTree = "<group>"; };
+		E2B71073208DB78100E3752C /* sections.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = sections.plist; sourceTree = "<group>"; };
+		E2B71078208DBE2000E3752C /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		E2B7107B208DBE2700E3752C /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		E2B7107F208DC86200E3752C /* NSColor+uBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+uBlock.swift"; sourceTree = "<group>"; };
+		E2B71088208E03A500E3752C /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		E2B7108B208E03E600E3752C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E2B7108E208E048600E3752C /* SectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHelper.swift; sourceTree = "<group>"; };
+		E2C3165520919FD900202151 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		E2C3165620919FDA00202151 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		E2C316592091CD6F00202151 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
+		E2C3165B2091CF4700202151 /* Storyboard+uBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+uBlock.swift"; sourceTree = "<group>"; };
+		E2CB9B78208F61EF004A5DFE /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		E2D4330E209060E00073624C /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
+		E2D4331420907DD30073624C /* uBlockExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = uBlockExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D4331720907DD30073624C /* blockerList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blockerList.json; sourceTree = "<group>"; };
+		E2D4331920907DD40073624C /* ContentBlockerRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockerRequestHandler.swift; sourceTree = "<group>"; };
+		E2D4331B20907DD40073624C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2D4331C20907DD40073624C /* uBlockExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uBlockExtension.entitlements; sourceTree = "<group>"; };
+		E2D4332720907E8C0073624C /* uBlockToolbar.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = uBlockToolbar.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D4332A20907E8C0073624C /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		E2D4332C20907E8C0073624C /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		E2D4332F20907E8C0073624C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		E2D4333120907E8C0073624C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2D4333220907E8C0073624C /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		E2D4333620907E8C0073624C /* uBlockToolbar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uBlockToolbar.entitlements; sourceTree = "<group>"; };
+		E2D43341209093FF0073624C /* AppMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMenuBar.swift; sourceTree = "<group>"; };
+		E2D433452090C1930073624C /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		E2D69EC82099775B0012B58F /* String+Shortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Shortcuts.swift"; sourceTree = "<group>"; };
+		E2D69ECA2099CA1C0012B58F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		E2E8B23820BD25B5000C64D1 /* PingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingDataManager.swift; sourceTree = "<group>"; };
+		E2FD39BA20A40BD200D4D534 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EA9C0625F941F737DCABA4B6 /* Pods_uBlockExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uBlockExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCF1ED588E90CEC2BD25F7DD /* Pods-uBlockExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uBlockExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-uBlockExtension/Pods-uBlockExtension.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2201A8920AD8E2D00F7CFB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E278F4032089D93A00573C9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2201A9F20AD8FDE00F7CFB5 /* ServiceManagement.framework in Frameworks */,
+				712989AABE1F1134B6D8ADCB /* Pods_uBlock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D4331120907DD30073624C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D4331520907DD30073624C /* Cocoa.framework in Frameworks */,
+				824A5264C9F305A3C2683966 /* Pods_uBlockExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D4332420907E8C0073624C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D4332820907E8C0073624C /* Cocoa.framework in Frameworks */,
+				07F251AE012A29F4FA05F779 /* Pods_uBlockToolbar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D8AC3369989B05B0C955716 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2201A9E20AD8FDE00F7CFB5 /* ServiceManagement.framework */,
+				CF2ADC464229EDEE31C6DF27 /* Pods_uBlock.framework */,
+				E278F423208A008800573C9B /* Cocoa.framework */,
+				EA9C0625F941F737DCABA4B6 /* Pods_uBlockExtension.framework */,
+				7298C58F21DF343E023F6BFB /* Pods_uBlockToolbar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF1F2BFF8935F2FF2AB91FBA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				876E0FA70B37F4CBADCC7AB8 /* Pods-uBlock.debug.xcconfig */,
+				432F3B9F7D802337BCF1EBC2 /* Pods-uBlock.release.xcconfig */,
+				22E35B14E1C5FC23F473DE7E /* Pods-uBlockExtension.debug.xcconfig */,
+				FCF1ED588E90CEC2BD25F7DD /* Pods-uBlockExtension.release.xcconfig */,
+				280805F713C30D0E4E9ED206 /* Pods-uBlockToolbar.debug.xcconfig */,
+				4D03617AB7A23E9B349CD75F /* Pods-uBlockToolbar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E2201A8D20AD8E2D00F7CFB5 /* LauncherApp */ = {
+			isa = PBXGroup;
+			children = (
+				E2201A8E20AD8E2D00F7CFB5 /* AppDelegate.swift */,
+				E2201A9220AD8E2D00F7CFB5 /* Assets.xcassets */,
+				E2201A9420AD8E2D00F7CFB5 /* Main.storyboard */,
+				E2201A9720AD8E2D00F7CFB5 /* Info.plist */,
+				E2201A9820AD8E2D00F7CFB5 /* LauncherApp.entitlements */,
+			);
+			path = LauncherApp;
+			sourceTree = "<group>";
+		};
+		E278F3FD2089D93A00573C9B = {
+			isa = PBXGroup;
+			children = (
+				E2FD39BA20A40BD200D4D534 /* Playground.playground */,
+				E29F9FD220A2ADDE0042BDFB /* Common Resources */,
+				E278F433208A010600573C9B /* Common */,
+				E278F41D2089FF1E00573C9B /* Lib */,
+				E278F4082089D93A00573C9B /* uBlock */,
+				E2D4331620907DD30073624C /* uBlockExtension */,
+				E2D4332920907E8C0073624C /* uBlockToolbar */,
+				E2201A8D20AD8E2D00F7CFB5 /* LauncherApp */,
+				E278F4072089D93A00573C9B /* Products */,
+				DF1F2BFF8935F2FF2AB91FBA /* Pods */,
+				5D8AC3369989B05B0C955716 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E278F4072089D93A00573C9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E278F4062089D93A00573C9B /* uBlock.app */,
+				E2D4331420907DD30073624C /* uBlockExtension.appex */,
+				E2D4332720907E8C0073624C /* uBlockToolbar.appex */,
+				E2201A8C20AD8E2D00F7CFB5 /* LauncherApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E278F4082089D93A00573C9B /* uBlock */ = {
+			isa = PBXGroup;
+			children = (
+				E278F4092089D93A00573C9B /* AppDelegate.swift */,
+				E2D43341209093FF0073624C /* AppMenuBar.swift */,
+				E2D433452090C1930073624C /* MainWindowController.swift */,
+				E2C316592091CD6F00202151 /* IntroVC.swift */,
+				E278F40B2089D93A00573C9B /* MainVC.swift */,
+				E2B7106D208DB16700E3752C /* SectionListVC.swift */,
+				E26E2292209AC870004AC4C2 /* SectionDetailVC.swift */,
+				E2D4330E209060E00073624C /* AlertUtil.swift */,
+				E27BB6FD20AC68A100544CD0 /* Util.swift */,
+				E278F40F2089D93A00573C9B /* Main.storyboard */,
+				E2B71087208E036300E3752C /* Data */,
+				E2D69EC7209977360012B58F /* Extensions */,
+				E2B7107E208DC78000E3752C /* Views */,
+				E278F41A2089EDC100573C9B /* Resources */,
+			);
+			path = uBlock;
+			sourceTree = "<group>";
+		};
+		E278F41A2089EDC100573C9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E2A9F48C209C2DC1009F7923 /* uBlockInfo.rtfd */,
+				E2B71073208DB78100E3752C /* sections.plist */,
+				E278F4122089D93B00573C9B /* Info.plist */,
+				E278F4132089D93B00573C9B /* uBlock.entitlements */,
+				E2B7106B208DA1FA00E3752C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E278F41D2089FF1E00573C9B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				E2C3165520919FD900202151 /* Event.swift */,
+				E2C3165620919FDA00202151 /* Observable.swift */,
+				E278F437208A01E700573C9B /* AssetsManagement */,
+				E278F439208A020500573C9B /* FilterlistManagement */,
+				E278F438208A01F500573C9B /* WhitelistManagement */,
+				E278F43A208A0D0800573C9B /* PauseResumeBlockingManagement */,
+				E2E8B23720BD2592000C64D1 /* PingDataManagement */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		E278F433208A010600573C9B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E278F434208A013500573C9B /* Constants.swift */,
+				E2B7107F208DC86200E3752C /* NSColor+uBlock.swift */,
+				E2C3165B2091CF4700202151 /* Storyboard+uBlock.swift */,
+				E23A67852092FA4F00BD464F /* FileManager+uBlock.swift */,
+				E229BA9220A58F5A00F35740 /* UserPref.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E278F437208A01E700573C9B /* AssetsManagement */ = {
+			isa = PBXGroup;
+			children = (
+				E207F54F209747D1008DC607 /* AssetsManager.swift */,
+				E27F249D2092E6F6006B4EDE /* AssetDownloader.swift */,
+				E207F54D209729B9008DC607 /* AssetMerger.swift */,
+			);
+			path = AssetsManagement;
+			sourceTree = "<group>";
+		};
+		E278F438208A01F500573C9B /* WhitelistManagement */ = {
+			isa = PBXGroup;
+			children = (
+				E217A8D620A2CC5B00DF0CF1 /* WhitelistManager.swift */,
+				E217A8DB20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift */,
+			);
+			path = WhitelistManagement;
+			sourceTree = "<group>";
+		};
+		E278F439208A020500573C9B /* FilterlistManagement */ = {
+			isa = PBXGroup;
+			children = (
+				E2588FA320A01B3D009ADDAA /* FilterListManager.swift */,
+			);
+			path = FilterlistManagement;
+			sourceTree = "<group>";
+		};
+		E278F43A208A0D0800573C9B /* PauseResumeBlockingManagement */ = {
+			isa = PBXGroup;
+			children = (
+				E2359FAE20A465870055C403 /* PauseResumeBlockinManager.swift */,
+			);
+			path = PauseResumeBlockingManagement;
+			sourceTree = "<group>";
+		};
+		E29F9FD220A2ADDE0042BDFB /* Common Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E283EDA820A171C7008B471B /* Assets */,
+				E26E229A209AFAB4004AC4C2 /* Fonts */,
+			);
+			name = "Common Resources";
+			sourceTree = "<group>";
+		};
+		E2B7107E208DC78000E3752C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E2D69ECA2099CA1C0012B58F /* Button.swift */,
+				E2B7106F208DB1C800E3752C /* SectionItemCollectionViewItem.swift */,
+				E2B71071208DB25D00E3752C /* SectionItemCollectionViewItem.xib */,
+				E2B71078208DBE2000E3752C /* SectionHeaderView.swift */,
+				E2B7107B208DBE2700E3752C /* SectionHeaderView.xib */,
+				E2CB9B78208F61EF004A5DFE /* PlaceholderTextView.swift */,
+				E26E2298209AD549004AC4C2 /* FilterListTableCellView.swift */,
+				E26E2294209ACA0A004AC4C2 /* WhitelistTableCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2B71087208E036300E3752C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E2B71088208E03A500E3752C /* Section.swift */,
+				E2B7108B208E03E600E3752C /* Item.swift */,
+				E2B7108E208E048600E3752C /* SectionHelper.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E2D4331620907DD30073624C /* uBlockExtension */ = {
+			isa = PBXGroup;
+			children = (
+				E2D4331720907DD30073624C /* blockerList.json */,
+				E2D4331920907DD40073624C /* ContentBlockerRequestHandler.swift */,
+				E2D4331B20907DD40073624C /* Info.plist */,
+				E2D4331C20907DD40073624C /* uBlockExtension.entitlements */,
+			);
+			path = uBlockExtension;
+			sourceTree = "<group>";
+		};
+		E2D4332920907E8C0073624C /* uBlockToolbar */ = {
+			isa = PBXGroup;
+			children = (
+				E2D4332A20907E8C0073624C /* SafariExtensionHandler.swift */,
+				E2D4332C20907E8C0073624C /* SafariExtensionViewController.swift */,
+				E269283420BE6FC000421BF3 /* Util.swift */,
+				E2D4332E20907E8C0073624C /* SafariExtensionViewController.xib */,
+				E2D4333120907E8C0073624C /* Info.plist */,
+				E2D4333220907E8C0073624C /* script.js */,
+				E24FD66C20DA244B00DE663B /* ToolbarItemIcon-16pt.pdf */,
+				E2D4333620907E8C0073624C /* uBlockToolbar.entitlements */,
+			);
+			path = uBlockToolbar;
+			sourceTree = "<group>";
+		};
+		E2D69EC7209977360012B58F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2D69EC82099775B0012B58F /* String+Shortcuts.swift */,
+				E244F7AD2098B06C00B37D53 /* NSControl+uBlock.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2E8B23720BD2592000C64D1 /* PingDataManagement */ = {
+			isa = PBXGroup;
+			children = (
+				E2E8B23820BD25B5000C64D1 /* PingDataManager.swift */,
+			);
+			path = PingDataManagement;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2201A8B20AD8E2D00F7CFB5 /* LauncherApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2201A9B20AD8E2D00F7CFB5 /* Build configuration list for PBXNativeTarget "LauncherApp" */;
+			buildPhases = (
+				E2201A8820AD8E2D00F7CFB5 /* Sources */,
+				E2201A8920AD8E2D00F7CFB5 /* Frameworks */,
+				E2201A8A20AD8E2D00F7CFB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LauncherApp;
+			productName = LauncherApp;
+			productReference = E2201A8C20AD8E2D00F7CFB5 /* LauncherApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E278F4052089D93A00573C9B /* uBlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E278F4162089D93B00573C9B /* Build configuration list for PBXNativeTarget "uBlock" */;
+			buildPhases = (
+				F9BBCCCC9C992AF668453D30 /* [CP] Check Pods Manifest.lock */,
+				E278F4022089D93A00573C9B /* Sources */,
+				E278F4032089D93A00573C9B /* Frameworks */,
+				E278F4042089D93A00573C9B /* Resources */,
+				E278F4192089EA4300573C9B /* ShellScript */,
+				E278F432208A008800573C9B /* Embed App Extensions */,
+				D1890C0979EF53AB52AA4F5C /* [CP] Embed Pods Frameworks */,
+				E2201A9C20AD8ECD00F7CFB5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2D4331E20907DD40073624C /* PBXTargetDependency */,
+				E2D4333820907E8C0073624C /* PBXTargetDependency */,
+			);
+			name = uBlock;
+			productName = uBlock;
+			productReference = E278F4062089D93A00573C9B /* uBlock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2D4331320907DD30073624C /* uBlockExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2D4332020907DD40073624C /* Build configuration list for PBXNativeTarget "uBlockExtension" */;
+			buildPhases = (
+				00DF0E04CDAF059AD0A1F48E /* [CP] Check Pods Manifest.lock */,
+				E2D4331020907DD30073624C /* Sources */,
+				E2D4331120907DD30073624C /* Frameworks */,
+				E2D4331220907DD30073624C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uBlockExtension;
+			productName = uBlockExtension;
+			productReference = E2D4331420907DD30073624C /* uBlockExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E2D4332620907E8C0073624C /* uBlockToolbar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2D4333A20907E8C0073624C /* Build configuration list for PBXNativeTarget "uBlockToolbar" */;
+			buildPhases = (
+				BE46BC5BC81844CC654963DB /* [CP] Check Pods Manifest.lock */,
+				E2D4332320907E8C0073624C /* Sources */,
+				E2D4332420907E8C0073624C /* Frameworks */,
+				E2D4332520907E8C0073624C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = uBlockToolbar;
+			productName = uBlockToolbar;
+			productReference = E2D4332720907E8C0073624C /* uBlockToolbar.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E278F3FE2089D93A00573C9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "uBlock, LLC";
+				TargetAttributes = {
+					E2201A8B20AD8E2D00F7CFB5 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					E278F4052089D93A00573C9B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					E2D4331320907DD30073624C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					E2D4332620907E8C0073624C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E278F4012089D93A00573C9B /* Build configuration list for PBXProject "uBlock" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E278F3FD2089D93A00573C9B;
+			productRefGroup = E278F4072089D93A00573C9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E278F4052089D93A00573C9B /* uBlock */,
+				E2D4331320907DD30073624C /* uBlockExtension */,
+				E2D4332620907E8C0073624C /* uBlockToolbar */,
+				E2201A8B20AD8E2D00F7CFB5 /* LauncherApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2201A8A20AD8E2D00F7CFB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2201A9320AD8E2D00F7CFB5 /* Assets.xcassets in Resources */,
+				E2201A9620AD8E2D00F7CFB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E278F4042089D93A00573C9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E26E229B209AFAB4004AC4C2 /* Fonts in Resources */,
+				E283EDA920A171C8008B471B /* Assets in Resources */,
+				E2B7107C208DBE2800E3752C /* SectionHeaderView.xib in Resources */,
+				E2A9F48D209C2DC2009F7923 /* uBlockInfo.rtfd in Resources */,
+				E2B7106C208DA1FA00E3752C /* Assets.xcassets in Resources */,
+				E278F4112089D93A00573C9B /* Main.storyboard in Resources */,
+				E2B71074208DB78100E3752C /* sections.plist in Resources */,
+				E2B71072208DB25D00E3752C /* SectionItemCollectionViewItem.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D4331220907DD30073624C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D4331820907DD40073624C /* blockerList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D4332520907E8C0073624C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2D4333020907E8C0073624C /* SafariExtensionViewController.xib in Resources */,
+				E2C31661209210FE00202151 /* Assets.xcassets in Resources */,
+				E2D4333320907E8C0073624C /* script.js in Resources */,
+				E24FD66D20DA244B00DE663B /* ToolbarItemIcon-16pt.pdf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DF0E04CDAF059AD0A1F48E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-uBlockExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE46BC5BC81844CC654963DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-uBlockToolbar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1890C0979EF53AB52AA4F5C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-uBlock/Pods-uBlock-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Punycode-Cocoa/Punycode_Cocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Punycode_Cocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-uBlock/Pods-uBlock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E278F4192089EA4300573C9B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8c879414611df745d8f2c3e4e85f135bf4223ab0 44ad96981b7f986c0940f58f73dcc683a607df1287204d73d7cb16d477f120bc";
+		};
+		F9BBCCCC9C992AF668453D30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-uBlock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2201A8820AD8E2D00F7CFB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2201A8F20AD8E2D00F7CFB5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E278F4022089D93A00573C9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E244F7AE2098B06C00B37D53 /* NSControl+uBlock.swift in Sources */,
+				E2D4330F209060E00073624C /* AlertUtil.swift in Sources */,
+				E2D69EC92099775B0012B58F /* String+Shortcuts.swift in Sources */,
+				E2B7108C208E03E600E3752C /* Item.swift in Sources */,
+				E2B71089208E03A500E3752C /* Section.swift in Sources */,
+				E2588FA420A01B3D009ADDAA /* FilterListManager.swift in Sources */,
+				E2C3165A2091CD6F00202151 /* IntroVC.swift in Sources */,
+				E229BA9320A58F5A00F35740 /* UserPref.swift in Sources */,
+				E217A8D720A2CC5B00DF0CF1 /* WhitelistManager.swift in Sources */,
+				E2E8B23920BD25B5000C64D1 /* PingDataManager.swift in Sources */,
+				E278F40C2089D93A00573C9B /* MainVC.swift in Sources */,
+				E2C3165720919FDA00202151 /* Event.swift in Sources */,
+				E2C3165C2091CF4700202151 /* Storyboard+uBlock.swift in Sources */,
+				E2B71079208DBE2000E3752C /* SectionHeaderView.swift in Sources */,
+				E278F40A2089D93A00573C9B /* AppDelegate.swift in Sources */,
+				E2D433462090C1930073624C /* MainWindowController.swift in Sources */,
+				E2B7106E208DB16700E3752C /* SectionListVC.swift in Sources */,
+				E207F55120975759008DC607 /* AssetDownloader.swift in Sources */,
+				E2B7108F208E048600E3752C /* SectionHelper.swift in Sources */,
+				E2B71080208DC86200E3752C /* NSColor+uBlock.swift in Sources */,
+				E2B71070208DB1C900E3752C /* SectionItemCollectionViewItem.swift in Sources */,
+				E2D43342209093FF0073624C /* AppMenuBar.swift in Sources */,
+				E207F550209747D1008DC607 /* AssetsManager.swift in Sources */,
+				E26E2299209AD549004AC4C2 /* FilterListTableCellView.swift in Sources */,
+				E2359FAF20A465870055C403 /* PauseResumeBlockinManager.swift in Sources */,
+				E26E2295209ACA0A004AC4C2 /* WhitelistTableCellView.swift in Sources */,
+				E2C3165820919FDA00202151 /* Observable.swift in Sources */,
+				E23A67862092FA4F00BD464F /* FileManager+uBlock.swift in Sources */,
+				E207F5522097575B008DC607 /* AssetMerger.swift in Sources */,
+				E2D69ECB2099CA1C0012B58F /* Button.swift in Sources */,
+				E2CB9B79208F61EF004A5DFE /* PlaceholderTextView.swift in Sources */,
+				E217A8DC20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift in Sources */,
+				E27BB6FE20AC68A100544CD0 /* Util.swift in Sources */,
+				E278F435208A013500573C9B /* Constants.swift in Sources */,
+				E26E2293209AC871004AC4C2 /* SectionDetailVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D4331020907DD30073624C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E244F79320983ADF00B37D53 /* FileManager+uBlock.swift in Sources */,
+				E2D4331A20907DD40073624C /* ContentBlockerRequestHandler.swift in Sources */,
+				E2588FA920A02A80009ADDAA /* Item.swift in Sources */,
+				E2588FAF20A05954009ADDAA /* Constants.swift in Sources */,
+				E244F79620983C9F00B37D53 /* Observable.swift in Sources */,
+				E2359FB120A467BE0055C403 /* PauseResumeBlockinManager.swift in Sources */,
+				E244F79520983C9D00B37D53 /* Event.swift in Sources */,
+				E229BA9020A58E4B00F35740 /* AssetDownloader.swift in Sources */,
+				E229BA8B20A58DDF00F35740 /* WhitelistManager.swift in Sources */,
+				E229BA9420A58F5A00F35740 /* UserPref.swift in Sources */,
+				E229BA9120A58E4E00F35740 /* AssetMerger.swift in Sources */,
+				E229BA8F20A58E4900F35740 /* AssetsManager.swift in Sources */,
+				E229BA8C20A58DE100F35740 /* WhitelistRulesMaker.swift in Sources */,
+				E229BA8A20A58DDB00F35740 /* FilterListManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2D4332320907E8C0073624C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E229BA9520A58F5A00F35740 /* UserPref.swift in Sources */,
+				E269283520BE6FC000421BF3 /* Util.swift in Sources */,
+				E2D4332D20907E8C0073624C /* SafariExtensionViewController.swift in Sources */,
+				E217A8DF20A2FFE800DF0CF1 /* Event.swift in Sources */,
+				E270FEC420B2A3E80053EDD6 /* String+Shortcuts.swift in Sources */,
+				E217A8D820A2CC5B00DF0CF1 /* WhitelistManager.swift in Sources */,
+				E217A8D920A2EE9700DF0CF1 /* FileManager+uBlock.swift in Sources */,
+				E217A8E320A3214D00DF0CF1 /* FilterListManager.swift in Sources */,
+				E2C3165E20920CE000202151 /* AlertUtil.swift in Sources */,
+				E2359FB020A465870055C403 /* PauseResumeBlockinManager.swift in Sources */,
+				E217A8E220A31F4C00DF0CF1 /* AssetMerger.swift in Sources */,
+				E2D4332B20907E8C0073624C /* SafariExtensionHandler.swift in Sources */,
+				E217A8DE20A2FFE600DF0CF1 /* Observable.swift in Sources */,
+				E217A8E020A31F4500DF0CF1 /* AssetsManager.swift in Sources */,
+				E217A8DD20A2F6DD00DF0CF1 /* WhitelistRulesMaker.swift in Sources */,
+				E2588FAA20A02A80009ADDAA /* Item.swift in Sources */,
+				E217A8E120A31F4A00DF0CF1 /* AssetDownloader.swift in Sources */,
+				E217A8DA20A2EF1800DF0CF1 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2D4331E20907DD40073624C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2D4331320907DD30073624C /* uBlockExtension */;
+			targetProxy = E2D4331D20907DD40073624C /* PBXContainerItemProxy */;
+		};
+		E2D4333820907E8C0073624C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2D4332620907E8C0073624C /* uBlockToolbar */;
+			targetProxy = E2D4333720907E8C0073624C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2201A9420AD8E2D00F7CFB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2201A9520AD8E2D00F7CFB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E278F40F2089D93A00573C9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E278F4102089D93A00573C9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2D4332E20907E8C0073624C /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2D4332F20907E8C0073624C /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2201A9920AD8E2D00F7CFB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LauncherApp/LauncherApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = LauncherApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.LauncherApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E2201A9A20AD8E2D00F7CFB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LauncherApp/LauncherApp.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = LauncherApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.LauncherApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		E278F4142089D93B00573C9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E278F4152089D93B00573C9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		E278F4172089D93B00573C9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 876E0FA70B37F4CBADCC7AB8 /* Pods-uBlock.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = uBlock/Resources/uBlock.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = "$(SRCROOT)/uBlock/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.uBlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E278F4182089D93B00573C9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 432F3B9F7D802337BCF1EBC2 /* Pods-uBlock.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = uBlock/Resources/uBlock.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = "$(SRCROOT)/uBlock/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.uBlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		E2D4332120907DD40073624C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E35B14E1C5FC23F473DE7E /* Pods-uBlockExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = uBlockExtension/uBlockExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = uBlockExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.uBlock.SafariContentBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E2D4332220907DD40073624C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCF1ED588E90CEC2BD25F7DD /* Pods-uBlockExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = uBlockExtension/uBlockExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = uBlockExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.uBlock.SafariContentBlocker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		E2D4333B20907E8C0073624C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280805F713C30D0E4E9ED206 /* Pods-uBlockToolbar.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = uBlockToolbar/uBlockToolbar.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = uBlockToolbar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.uBlock.SafariMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		E2D4333C20907E8C0073624C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D03617AB7A23E9B349CD75F /* Pods-uBlockToolbar.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = uBlockToolbar/uBlockToolbar.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GFKM76M39L;
+				INFOPLIST_FILE = uBlockToolbar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = org.uBlockLLC.uBlock.SafariMenu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2201A9B20AD8E2D00F7CFB5 /* Build configuration list for PBXNativeTarget "LauncherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2201A9920AD8E2D00F7CFB5 /* Debug */,
+				E2201A9A20AD8E2D00F7CFB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E278F4012089D93A00573C9B /* Build configuration list for PBXProject "uBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E278F4142089D93B00573C9B /* Debug */,
+				E278F4152089D93B00573C9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E278F4162089D93B00573C9B /* Build configuration list for PBXNativeTarget "uBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E278F4172089D93B00573C9B /* Debug */,
+				E278F4182089D93B00573C9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2D4332020907DD40073624C /* Build configuration list for PBXNativeTarget "uBlockExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2D4332120907DD40073624C /* Debug */,
+				E2D4332220907DD40073624C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2D4333A20907E8C0073624C /* Build configuration list for PBXNativeTarget "uBlockToolbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2D4333B20907E8C0073624C /* Debug */,
+				E2D4333C20907E8C0073624C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E278F3FE2089D93A00573C9B /* Project object */;
+}

@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (4.7.2)
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
+  - Fabric (1.7.7)
+  - Punycode-Cocoa (1.3.1)
+  - SwiftyBeaver (1.5.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - Crashlytics (~> 3.10.2)
+  - Fabric (~> 1.7.7)
+  - Punycode-Cocoa
+  - SwiftyBeaver
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Crashlytics
+    - Fabric
+    - Punycode-Cocoa
+    - SwiftyBeaver
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  Punycode-Cocoa: d9a974cc7384bd6d31b8d9df867a9b7b213d8880
+  SwiftyBeaver: 85daaaa2b3ae6e31b7b55c99430e8b91dac088af
+
+PODFILE CHECKSUM: 525ffaeafa4037a53befaacdefd1454a8c52618e
+
+COCOAPODS: 1.5.0

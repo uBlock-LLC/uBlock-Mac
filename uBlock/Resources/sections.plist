@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>header</key>
+		<string>Preinstalled Rules</string>
+		<key>section</key>
+		<array>
+			<dict>
+				<key>id</key>
+				<string>DEFAULT_FILTERLIST</string>
+				<key>name</key>
+				<string>Filter Lists</string>
+				<key>active</key>
+				<true/>
+				<key>filterlist</key>
+				<array>
+					<dict>
+						<key>id</key>
+						<string>easylist_content_blocker</string>
+						<key>name</key>
+						<string>Block annoying ads, pop-ups, and intrusive trackers</string>
+						<key>active</key>
+						<true/>
+						<key>rules_count</key>
+						<integer>45899</integer>
+						<key>desc</key>
+						<string>Removes most adverts from international webpages, including unwanted frames, images, and objects</string>
+						<key>status</key>
+						<integer>1</integer>
+					</dict>
+					<dict>
+						<key>id</key>
+						<string>fanboy-social</string>
+						<key>name</key>
+						<string>Facebook Widgets</string>
+						<key>active</key>
+						<false/>
+						<key>rules_count</key>
+						<integer>5248</integer>
+						<key>desc</key>
+						<string>Removes most adverts from international webpages, including unwanted frames, images, and objects</string>
+						<key>status</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>id</key>
+						<string>fanboy-annoyance</string>
+						<key>name</key>
+						<string>Other Shared Widgets</string>
+						<key>active</key>
+						<false/>
+						<key>rules_count</key>
+						<integer>9626</integer>
+						<key>desc</key>
+						<string>Removes most adverts from international webpages, including unwanted frames, images, and objects</string>
+						<key>status</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>id</key>
+						<string>cookies</string>
+						<key>name</key>
+						<string>EU Cookies</string>
+						<key>active</key>
+						<false/>
+						<key>rules_count</key>
+						<real>4836</real>
+						<key>desc</key>
+						<string>Removes most adverts from international webpages, including unwanted frames, images, and objects</string>
+						<key>status</key>
+						<integer>0</integer>
+					</dict>
+					<dict>
+						<key>id</key>
+						<string>easylist_exceptionrules_content_blocker</string>
+						<key>name</key>
+						<string>Allow some non-intrusive ads</string>
+						<key>active</key>
+						<true/>
+						<key>rules_count</key>
+						<integer>49217</integer>
+						<key>desc</key>
+						<string>Removes most adverts from international webpages, including unwanted frames, images, and objects</string>
+						<key>status</key>
+						<integer>1</integer>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>id</key>
+				<string>WHITELIST</string>
+				<key>name</key>
+				<string>Whitelisting</string>
+				<key>active</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

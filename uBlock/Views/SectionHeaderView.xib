@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="SectionHeaderView" id="c22-O7-iKe" customClass="SectionHeaderView" customModule="uBlock" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KEt-Cg-8IH">
+                    <rect key="frame" x="18" y="7" width="264" height="18"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Section Number" id="Hei-qg-gZf">
+                        <font key="font" metaFont="systemSemibold" size="14"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KEt-Cg-8IH" secondAttribute="trailing" constant="20" id="64U-u8-26k"/>
+                <constraint firstItem="KEt-Cg-8IH" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="jfb-iW-nCp"/>
+                <constraint firstItem="KEt-Cg-8IH" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="qhf-U1-efF"/>
+            </constraints>
+            <connections>
+                <outlet property="sectionTitle" destination="KEt-Cg-8IH" id="E1z-wf-94R"/>
+            </connections>
+        </customView>
+    </objects>
+</document>
