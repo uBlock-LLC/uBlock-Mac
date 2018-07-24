@@ -21,10 +21,23 @@
 
 import Cocoa
 
-class SectionItemCollectionViewItem: BaseSectionCollectionViewItem {
+extension NSColor {
     
-    override func update(_ item: Item?, for indexPath: IndexPath?) {
-        super.update(item, for: indexPath)
-        self.textField?.stringValue = item?.name ?? ""
+    func lighter(by percentage:CGFloat=30.0) -> NSColor? {
+        return self.adjust(by: abs(percentage) )
+    }
+    
+    func darker(by percentage:CGFloat=30.0) -> NSColor? {
+        return self.adjust(by: -1 * abs(percentage) )
+    }
+    
+    func adjust(by percentage:CGFloat=30.0) -> NSColor? {
+        var r:CGFloat=0, g:CGFloat=0, b:CGFloat=0, a:CGFloat=0;
+        self.getRed(&r, green: &g, blue: &b, alpha: &a)
+        let color = NSColor(red: min(r + percentage/100, 1.0),
+                            green: min(g + percentage/100, 1.0),
+                            blue: min(b + percentage/100, 1.0),
+                            alpha: a)
+        return color
     }
 }

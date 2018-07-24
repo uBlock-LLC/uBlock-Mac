@@ -188,7 +188,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
             WhitelistManager.shared.add(url)
         } else {
             AlertUtil.errorAlert(title: NSLocalizedString("Error", comment: ""),
-                                 message: NSLocalizedString("Invalid url", comment: ""))
+                                 message: NSLocalizedString("Please enter valid url.", comment: ""))
             return
         }
         

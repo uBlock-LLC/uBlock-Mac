@@ -36,7 +36,7 @@ class PingDataManager: NSObject {
         schedulePingData()
     }
     
-    private func schedulePingData() {
+    func sendPingIfDatePassed() {
         guard shouldSendPingData() else {
             return
         }
@@ -46,6 +46,10 @@ class PingDataManager: NSObject {
         if currentDate >= pingDate {
             sendPingData()
         }
+    }
+    
+    private func schedulePingData() {
+        sendPingIfDatePassed()
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + (60 * 60)) {
             self.schedulePingData()
         }

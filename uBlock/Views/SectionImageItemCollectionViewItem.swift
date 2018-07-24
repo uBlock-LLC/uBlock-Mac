@@ -21,10 +21,15 @@
 
 import Cocoa
 
-class SectionItemCollectionViewItem: BaseSectionCollectionViewItem {
+class SectionImageItemCollectionViewItem: SectionItemCollectionViewItem {
     
     override func update(_ item: Item?, for indexPath: IndexPath?) {
         super.update(item, for: indexPath)
-        self.textField?.stringValue = item?.name ?? ""
+        guard let image = self.item?.image else {
+            self.imageView?.isHidden = true
+            return
+        }
+        self.imageView?.image = NSImage(named: NSImage.Name(image))
+        self.imageView?.isHidden = false
     }
 }

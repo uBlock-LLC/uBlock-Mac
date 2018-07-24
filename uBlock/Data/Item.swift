@@ -25,12 +25,15 @@ class Item : NSObject {
     static let EMPTY_WHITELIST_ITEM_ID = "EMPTY_WHITELIST"
     static let WHITELIST_ITEM_ID = "WHITELIST"
     static let ALL_FILTER_LIST_INACTIVE_ITEM_ID = "INACTIVE_FILTER_LIST"
+    static let DONATE_ITEM_ID = "DONATE"
+    static let DEFAULT_FILTER_LIST_ITEM_ID = "DEFAULT_FILTERLIST"
     
     var id: String? = nil
     var name: String? = nil
     var active: Bool? = nil
     var desc: String? = nil
     var rulesCount: Int? = nil
+    var image: String? = nil
     
     var filterListItems: [Item]? = nil
     

@@ -24,24 +24,56 @@ import Cocoa
 @IBDesignable
 class Button: NSButton
 {
-    @IBInspectable var textColor: NSColor?
+    @IBInspectable var textColor: NSColor? {
+        didSet {
+            updateTextColor(textColor)
+        }
+    }
     
-    override func awakeFromNib()
-    {
-        if let textColor = textColor, let font = font
-        {
-            let style = NSMutableParagraphStyle()
-            style.alignment = .center
-            
-            let attributes =
-                [
-                    .foregroundColor: textColor,
-                    .font: font,
-                    .paragraphStyle: style
-                    ] as [NSAttributedStringKey : Any]
-            
-            let attributedTitle = NSAttributedString(string: title, attributes: attributes)
-            self.attributedTitle = attributedTitle
+    @IBInspectable var backgroundColor: NSColor? {
+        didSet {
+            self.wantsLayer = true
+            self.layer?.backgroundColor = backgroundColor?.cgColor
+        }
+    }
+    
+    override func awakeFromNib() {
+        updateTextColor(textColor)
+    }
+    
+    override func highlight(_ flag: Bool) {
+        if wantsLayer && backgroundColor != nil {
+            self.layer?.backgroundColor = flag ? backgroundColor?.darker(by: 15.0)?.cgColor : backgroundColor?.cgColor
+        }
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            animator().alphaValue = isEnabled ? 1.0 : 0.6
+        }
+    }
+    
+    private func updateTextColor(_ color: NSColor?) {
+        guard let textColor = color, let font = font else {
+            return
+        }
+        
+        let style = NSMutableParagraphStyle()
+        style.alignment = .center
+        
+        let attributes = [
+            .foregroundColor: textColor,
+            .font: font,
+            .paragraphStyle: style
+            ] as [NSAttributedStringKey : Any]
+        
+        let attributedTitle = NSAttributedString(string: title, attributes: attributes)
+        self.attributedTitle = attributedTitle
+    }
+    
+    override var title: String {
+        didSet {
+            updateTextColor(textColor)
         }
     }
 }

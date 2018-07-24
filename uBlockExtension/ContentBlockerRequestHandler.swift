@@ -22,8 +22,11 @@
 import Foundation
 
 class ContentBlockerRequestHandler: NSObject, NSExtensionRequestHandling {
-
+    
     func beginRequest(with context: NSExtensionContext) {
+        
+        PingDataManager.shared.sendPingIfDatePassed()
+        
         var rulesUrl: URL? = nil
         if PauseResumeBlockinManager.shared.isBlockingPaused() {
             rulesUrl = Constants.AssetsUrls.emptyRulesUrl

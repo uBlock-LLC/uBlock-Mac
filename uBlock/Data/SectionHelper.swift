@@ -58,6 +58,9 @@ class SectionHelper {
                     }
                     
                     items?.append(Item(id: id, name: name, active: active, filterListItems: filterListItems))
+                    if let image = item["image"] as? String {
+                        items?.last?.image = image
+                    }
                 }
             }
             sections?.append(Section(header: header, items: items))

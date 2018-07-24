@@ -33,11 +33,16 @@ class SectionListVC: NSViewController {
         
         sections = SectionHelper.defaultSections()
         
-        if Constants.shouldSelectWhitelist.get() {
-            selectSectionItemById(Item.WHITELIST_ITEM_ID)
-            Constants.shouldSelectWhitelist.set(newValue: false)
+        if !UserPref.isDonationPageShown() {
+            selectSectionItemById(Item.DONATE_ITEM_ID)
+            UserPref.setDonationPageShown(true)
         } else {
-            selectSectionItemById("DEFAULT_FILTERLIST")
+            if Constants.shouldSelectWhitelist.get() {
+                selectSectionItemById(Item.WHITELIST_ITEM_ID)
+                Constants.shouldSelectWhitelist.set(newValue: false)
+            } else {
+                selectSectionItemById(Item.DEFAULT_FILTER_LIST_ITEM_ID)
+            }
         }
     }
     
@@ -129,14 +134,24 @@ extension SectionListVC : NSCollectionViewDataSource {
     // Section Item
     func collectionView(_ collectionView: NSCollectionView,
                         itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let itemView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SectionItemCollectionViewItem"), for: indexPath)
-        guard let sectionItemView = itemView as? SectionItemCollectionViewItem else { return itemView }
-        
         var items = self.sections?[indexPath.section].items
         let itemData = items?[indexPath.item]
-        sectionItemView.delegate = self
-        sectionItemView.update(itemData, for: indexPath)
-        return itemView
+        var baseSectionItemView: BaseSectionCollectionViewItem?
+        var itemView: NSCollectionViewItem?
+        if itemData?.image == nil {
+            itemView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SectionItemCollectionViewItem"), for: indexPath)
+            guard let sectionItemView = itemView as? SectionItemCollectionViewItem else { return itemView! }
+            baseSectionItemView = sectionItemView
+        } else {
+            itemView = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SectionImageItemCollectionViewItem"), for: indexPath)
+            guard let sectionItemView = itemView as? SectionImageItemCollectionViewItem else { return itemView! }
+            baseSectionItemView = sectionItemView
+        }
+        
+        baseSectionItemView?.delegate = self
+        baseSectionItemView?.update(itemData, for: indexPath)
+        
+        return itemView!
     }
 }
 

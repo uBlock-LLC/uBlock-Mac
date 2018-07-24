@@ -96,6 +96,16 @@
 				<key>active</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>id</key>
+				<string>DONATE</string>
+				<key>name</key>
+				<string>Donate</string>
+				<key>active</key>
+				<false/>
+				<key>image</key>
+				<string>heart</string>
+			</dict>
 		</array>
 	</dict>
 </array>

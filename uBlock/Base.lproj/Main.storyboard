@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,13 +23,6 @@
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
-                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="Services" id="NMo-om-nkz">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
                                         <menuItem title="Quit uBlock" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
@@ -43,6 +36,13 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
+                                        <menuItem title="Restore Purchase" id="qHv-bO-B6Z">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="restorePurchaseMenuClick:" target="Voe-Tx-rLC" id="uLG-Hy-c5e"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Rf7-Fv-5oo"/>
                                         <menuItem title="uBlock Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="helpMenuClick:" target="Voe-Tx-rLC" id="t2W-pC-9H2"/>
@@ -1263,147 +1263,609 @@ Please visit </string>
                                     <rect key="frame" x="0.0" y="0.0" width="624" height="576"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAB-7v-3O6" userLabel="filterlist desc - Label">
-                                            <rect key="frame" x="29" y="508" width="575" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Determine what uBlock shows or hides on the websites you visit." id="Tnz-Ly-jFO">
-                                                <font key="font" size="16" name="LucidaGrande"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="textLineHeightMultiplier">
-                                                    <real key="value" value="1.2"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </textField>
-                                        <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8sB-Dr-d7l" userLabel="whitelist desc - Label">
-                                            <rect key="frame" x="29" y="508" width="575" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="To turn off ad blocking on specific sites, you can add them to your 'whitelist' here:" id="obL-fd-aod">
-                                                <font key="font" size="16" name="LucidaGrande"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="textLineHeightMultiplier">
-                                                    <real key="value" value="1.2"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </textField>
-                                        <box fixedFrame="YES" boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-o7-IXx" userLabel="Filterlist Options">
-                                            <rect key="frame" x="24" y="414" width="577" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView" ambiguous="YES" id="1km-Yr-2tb">
-                                                <rect key="frame" x="0.0" y="0.0" width="577" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <button wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-5B-9Cl" userLabel="Update filter lists - Button" customClass="Button" customModule="uBlock" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="24" width="201" height="32"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="square" title="Update Filter Lists" bezelStyle="shadowlessSquare" image="update_filter_lists_normal" imagePosition="overlaps" alignment="center" alternateImage="update_filter_lists_pressed" focusRingType="none" imageScaling="proportionallyUpOrDown" inset="2" id="FVH-Lm-rQ6">
-                                                            <behavior key="behavior" lightByContents="YES"/>
-                                                            <font key="font" size="13" name="LucidaGrande"/>
-                                                        </buttonCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="updateFilterListsClick:" target="XfG-lQ-9wD" id="K0Z-6Z-aGQ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-Tg-Djf">
-                                                        <rect key="frame" x="230" y="31" width="275" height="17"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Last updated April 25, 2018 11:10am EST" id="ms0-y5-Oi0">
-                                                            <font key="font" size="13" name="LucidaGrande"/>
-                                                            <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <progressIndicator wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="A7y-0Z-gfO">
-                                                        <rect key="frame" x="514" y="31" width="16" height="16"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    </progressIndicator>
-                                                </subviews>
-                                            </view>
-                                            <color key="fillColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </box>
-                                        <box hidden="YES" horizontalCompressionResistancePriority="751" fixedFrame="YES" boxType="custom" borderWidth="0.0" title="Whitelist Options" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-Y7-b4j">
-                                            <rect key="frame" x="24" y="414" width="577" height="80"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <view key="contentView" ambiguous="YES" id="9nF-3k-A3w">
-                                                <rect key="frame" x="0.0" y="0.0" width="577" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-vA-hb5">
-                                                        <rect key="frame" x="71" y="24" width="300" height="34"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <view key="contentView" ambiguous="YES" id="qy8-dU-hhM">
-                                                            <rect key="frame" x="1" y="1" width="298" height="32"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2m1-IX-ozM">
-                                                                    <rect key="frame" x="10" y="6" width="280" height="19"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="eg. www.example.com" drawsBackground="YES" usesSingleLineMode="YES" id="5NW-MC-oWk">
-                                                                        <font key="font" size="13" name="SFProText-Regular"/>
-                                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
-                                                                    </textFieldCell>
-                                                                    <connections>
-                                                                        <action selector="addWebsiteAction:" target="XfG-lQ-9wD" id="knb-pd-JjV"/>
-                                                                    </connections>
-                                                                </textField>
-                                                            </subviews>
-                                                        </view>
-                                                        <color key="borderColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </box>
-                                                    <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-Id-Uif" userLabel="Add Website - Button" customClass="Button" customModule="uBlock" customModuleProvider="target">
-                                                        <rect key="frame" x="375" y="25" width="119" height="32"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <buttonCell key="cell" type="square" title="Add Website" bezelStyle="shadowlessSquare" image="add_website_normal" imagePosition="overlaps" alignment="center" alternateImage="add_website_pressed" state="on" focusRingType="none" imageScaling="axesIndependently" inset="2" id="aRh-RM-Ya9">
-                                                            <behavior key="behavior" lightByContents="YES"/>
-                                                            <font key="font" size="13" name="LucidaGrande"/>
-                                                        </buttonCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                                <color key="value" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="3"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="addWebsiteAction:" target="XfG-lQ-9wD" id="znw-Cy-WPy"/>
-                                                        </connections>
-                                                    </button>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8B-UZ-WZe">
-                                                        <rect key="frame" x="73" y="8" width="306" height="13"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="example.com OR subdomain.example.com" id="GSi-ME-cIe">
-                                                            <font key="font" size="10" name="LucidaGrande"/>
-                                                            <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                        </textFieldCell>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                </subviews>
-                                            </view>
-                                            <color key="fillColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </box>
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="chF-YL-MTN" userLabel="Filter List Header">
+                                            <rect key="frame" x="0.0" y="410" width="624" height="166"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAB-7v-3O6" userLabel="filterlist desc - Label">
+                                                    <rect key="frame" x="24" y="99" width="575" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Determine what uBlock shows or hides on the websites you visit." allowsEditingTextAttributes="YES" id="Tnz-Ly-jFO">
+                                                        <font key="font" size="16" name="LucidaGrande"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="textLineHeightMultiplier">
+                                                            <real key="value" value="1.2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <box fixedFrame="YES" boxType="custom" borderWidth="0.0" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-o7-IXx" userLabel="Filterlist Options">
+                                                    <rect key="frame" x="23" y="5" width="577" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="1km-Yr-2tb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="577" height="80"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <button wantsLayer="YES" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HPE-5B-9Cl" userLabel="Update filter lists - Button" customClass="Button" customModule="uBlock" customModuleProvider="target">
+                                                                <rect key="frame" x="20" y="24" width="201" height="32"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="square" title="Update Filter Lists" bezelStyle="shadowlessSquare" image="update_filter_lists_normal" imagePosition="overlaps" alignment="center" alternateImage="update_filter_lists_pressed" focusRingType="none" imageScaling="proportionallyUpOrDown" inset="2" id="FVH-Lm-rQ6">
+                                                                    <behavior key="behavior" lightByContents="YES"/>
+                                                                    <font key="font" size="13" name="LucidaGrande"/>
+                                                                </buttonCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                        <color key="value" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="updateFilterListsClick:" target="XfG-lQ-9wD" id="K0Z-6Z-aGQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXZ-Tg-Djf">
+                                                                <rect key="frame" x="230" y="31" width="275" height="17"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" alignment="left" title="Last updated April 25, 2018 11:10am EST" id="ms0-y5-Oi0">
+                                                                    <font key="font" size="13" name="LucidaGrande"/>
+                                                                    <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <progressIndicator wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="A7y-0Z-gfO">
+                                                                <rect key="frame" x="514" y="31" width="16" height="16"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            </progressIndicator>
+                                                        </subviews>
+                                                    </view>
+                                                    <color key="fillColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </box>
+                                            </subviews>
+                                        </customView>
+                                        <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-kD-BDT" userLabel="Whitelist Header">
+                                            <rect key="frame" x="0.0" y="410" width="624" height="166"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                            <subviews>
+                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8sB-Dr-d7l" userLabel="whitelist desc - Label">
+                                                    <rect key="frame" x="24" y="99" width="575" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="To turn off ad blocking on specific sites, you can add them to your 'whitelist' here:" id="obL-fd-aod">
+                                                        <font key="font" size="16" name="LucidaGrande"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="textLineHeightMultiplier">
+                                                            <real key="value" value="1.2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <box horizontalCompressionResistancePriority="751" fixedFrame="YES" boxType="custom" borderWidth="0.0" title="Whitelist Options" translatesAutoresizingMaskIntoConstraints="NO" id="yKY-Y7-b4j">
+                                                    <rect key="frame" x="23" y="5" width="577" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <view key="contentView" ambiguous="YES" id="9nF-3k-A3w">
+                                                        <rect key="frame" x="0.0" y="0.0" width="577" height="80"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <box fixedFrame="YES" boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="qdF-vA-hb5">
+                                                                <rect key="frame" x="71" y="24" width="300" height="34"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <view key="contentView" ambiguous="YES" id="qy8-dU-hhM">
+                                                                    <rect key="frame" x="1" y="1" width="298" height="32"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <subviews>
+                                                                        <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2m1-IX-ozM">
+                                                                            <rect key="frame" x="10" y="6" width="280" height="19"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" alignment="left" placeholderString="eg. www.example.com" drawsBackground="YES" usesSingleLineMode="YES" id="5NW-MC-oWk">
+                                                                                <font key="font" size="13" name="SFProText-Regular"/>
+                                                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                                                            </textFieldCell>
+                                                                            <connections>
+                                                                                <action selector="addWebsiteAction:" target="XfG-lQ-9wD" id="knb-pd-JjV"/>
+                                                                            </connections>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                </view>
+                                                                <color key="borderColor" red="0.67450980392156867" green="0.67450980392156867" blue="0.67450980392156867" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </box>
+                                                            <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-Id-Uif" userLabel="Add Website - Button" customClass="Button" customModule="uBlock" customModuleProvider="target">
+                                                                <rect key="frame" x="375" y="25" width="119" height="32"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="square" title="Add Website" bezelStyle="shadowlessSquare" image="add_website_normal" imagePosition="overlaps" alignment="center" alternateImage="add_website_pressed" state="on" focusRingType="none" imageScaling="axesIndependently" inset="2" id="aRh-RM-Ya9">
+                                                                    <behavior key="behavior" lightByContents="YES"/>
+                                                                    <font key="font" size="13" name="LucidaGrande"/>
+                                                                </buttonCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                                        <color key="value" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="addWebsiteAction:" target="XfG-lQ-9wD" id="znw-Cy-WPy"/>
+                                                                </connections>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8B-UZ-WZe">
+                                                                <rect key="frame" x="73" y="8" width="306" height="13"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="example.com OR subdomain.example.com" id="GSi-ME-cIe">
+                                                                    <font key="font" size="10" name="LucidaGrande"/>
+                                                                    <color key="textColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </view>
+                                                    <color key="fillColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </box>
+                                            </subviews>
+                                        </customView>
+                                        <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NT0-oc-wIi" userLabel="Donate Header">
+                                            <rect key="frame" x="0.0" y="410" width="624" height="166"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                            <subviews>
+                                                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vH0-Ji-Be8">
+                                                    <rect key="frame" x="31" y="13" width="555" height="136"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="WTK-JZ-OdC">
+                                                        <rect key="frame" x="0.0" y="0.0" width="555" height="136"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <textView ambiguous="YES" editable="NO" selectable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Fog-uq-XGm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="555" height="136"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <size key="minSize" width="555" height="136"/>
+                                                                <size key="maxSize" width="573" height="10000000"/>
+                                                                <attributedString key="textStorage">
+                                                                    <fragment content="We are supported by ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1499999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="people just like you">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande-Bold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1499999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" who pay whatever they think is fair for not seeing the roughly ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1499999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="250 ads">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande-Bold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1499999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment>
+                                                                        <string key="content"> we block for them every day. Will you please consider joining them? 
+
+</string>
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.1499999999999999" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="Every donation helps!">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande-Bold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=" And if you’re not delighted you can get a ">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content="full refund">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande-Bold"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                    <fragment content=", no questions asked.">
+                                                                        <attributes>
+                                                                            <font key="NSFont" size="16" name="LucidaGrande"/>
+                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                                <tabStops>
+                                                                                    <textTab alignment="left" location="28.299999237060547">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="56.650001525878906">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="85">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="113.34999847412109">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="141.69999694824219">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="170.05000305175781">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="198.39999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="226.75">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="255.10000610351562">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="283.45001220703125">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="311.79998779296875">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                    <textTab alignment="left" location="340.14999389648438">
+                                                                                        <options/>
+                                                                                    </textTab>
+                                                                                </tabStops>
+                                                                            </paragraphStyle>
+                                                                        </attributes>
+                                                                    </fragment>
+                                                                </attributedString>
+                                                                <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </clipView>
+                                                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="HOn-bh-oYD">
+                                                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="nUr-4D-3Xf">
+                                                        <rect key="frame" x="-100" y="-100" width="15" height="134"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </scroller>
+                                                </scrollView>
+                                            </subviews>
+                                        </customView>
+                                        <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Fl-sH-03E" userLabel="Donate - Container View">
+                                            <rect key="frame" x="0.0" y="0.0" width="624" height="410"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <connections>
+                                                <segue destination="KNf-wb-l7X" kind="embed" identifier="DonateVC" id="GPO-Oz-YP9"/>
+                                            </connections>
+                                        </containerView>
                                         <containerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmc-cZ-ZEa" userLabel="Section Detail - Container View">
                                             <rect key="frame" x="0.0" y="0.0" width="624" height="410"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1459,6 +1921,8 @@ Please visit </string>
                     <connections>
                         <outlet property="btnAddWebsite" destination="aMv-Id-Uif" id="XZK-zG-Bme"/>
                         <outlet property="btnUpdateFilterLists" destination="HPE-5B-9Cl" id="hKn-4g-gt7"/>
+                        <outlet property="donateHeaderView" destination="NT0-oc-wIi" id="NKf-fT-RX8"/>
+                        <outlet property="filterListHeaderView" destination="chF-YL-MTN" id="Yzr-2k-mlH"/>
                         <outlet property="filterListOptionsView" destination="PKg-o7-IXx" id="Ffc-Op-8qp"/>
                         <outlet property="filterListProgress" destination="A7y-0Z-gfO" id="40S-8q-6o2"/>
                         <outlet property="imgWarning" destination="Ac6-rA-EST" id="xg7-0I-9hL"/>
@@ -1468,6 +1932,7 @@ Please visit </string>
                         <outlet property="rightPanel" destination="AeI-hy-dlU" id="hfJ-Tb-HX9"/>
                         <outlet property="txtWhitelist" destination="2m1-IX-ozM" id="v3f-ic-9TY"/>
                         <outlet property="warningBox" destination="FWx-ez-a44" id="Zty-Ee-eEN"/>
+                        <outlet property="whitelistHeaderView" destination="lfi-kD-BDT" id="Ukb-JA-UrF"/>
                         <outlet property="whitelistOptionsView" destination="yKY-Y7-b4j" id="Mso-Qm-stB"/>
                     </connections>
                 </viewController>
@@ -1821,6 +2286,321 @@ Please visit </string>
             </objects>
             <point key="canvasLocation" x="195" y="1766"/>
         </scene>
+        <!--DonateVC-->
+        <scene sceneID="qQa-pG-8pM">
+            <objects>
+                <viewController showSeguePresentationStyle="single" id="KNf-wb-l7X" customClass="DonateVC" customModule="uBlock" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" id="2Fd-AL-Uow">
+                        <rect key="frame" x="0.0" y="0.0" width="624" height="410"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <box fixedFrame="YES" boxType="custom" borderType="none" borderWidth="0.0" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="6PP-es-CoI">
+                                <rect key="frame" x="0.0" y="0.0" width="624" height="410"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" ambiguous="YES" id="7Be-lv-enV">
+                                    <rect key="frame" x="0.0" y="0.0" width="624" height="410"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZPu-p4-qDh">
+                                            <rect key="frame" x="139" y="376" width="245" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Select your donation amount:" allowsEditingTextAttributes="YES" id="wKy-j4-e5l">
+                                                <font key="font" size="16" name="LucidaGrande-Bold"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeBoldFont" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="hwt-Lo-iox">
+                                            <rect key="frame" x="391" y="377" width="16" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </progressIndicator>
+                                        <box fixedFrame="YES" boxType="custom" borderType="none" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="i6Y-qH-Ire">
+                                            <rect key="frame" x="119" y="232" width="386" height="136"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" ambiguous="YES" id="3kj-b0-XYR">
+                                                <rect key="frame" x="0.0" y="0.0" width="386" height="136"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcp-79-XjL" customClass="RadioButton" customModule="uBlock" customModuleProvider="target">
+                                                        <rect key="frame" x="21" y="80" width="104" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="$7.99" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="UPm-Gf-dPi" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" size="18" name="LucidaGrande"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTitleColor">
+                                                                <color key="value" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                                <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="donateAmountClick:" target="KNf-wb-l7X" id="kN3-ob-9FJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z6R-4I-28U" customClass="RadioButton" customModule="uBlock" customModuleProvider="target">
+                                                        <rect key="frame" x="141" y="80" width="104" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="$9.99" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="fhj-gD-RAw" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" size="18" name="LucidaGrande"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTitleColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                                <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="donateAmountClick:" target="KNf-wb-l7X" id="bFo-GF-GbW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GA1-46-cyE" customClass="RadioButton" customModule="uBlock" customModuleProvider="target">
+                                                        <rect key="frame" x="261" y="80" width="104" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="$14.99" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="Myk-rq-rn3" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" size="18" name="LucidaGrande"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTitleColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                                <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="donateAmountClick:" target="KNf-wb-l7X" id="C1z-G5-X9h"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1dF-Gk-JB5" customClass="RadioButton" customModule="uBlock" customModuleProvider="target">
+                                                        <rect key="frame" x="21" y="8" width="104" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="$19.99" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" state="on" inset="2" id="EXR-1x-txN" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" size="18" name="LucidaGrande"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTitleColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                                <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="donateAmountClick:" target="KNf-wb-l7X" id="WAK-eI-vxm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-xG-EOZ" customClass="RadioButton" customModule="uBlock" customModuleProvider="target">
+                                                        <rect key="frame" x="141" y="8" width="104" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="$24.99" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="MGK-ZO-J3N" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" size="18" name="LucidaGrande"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTitleColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                                <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.84313725490196079" green="0.84313725490196079" blue="0.84313725490196079" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="donateAmountClick:" target="KNf-wb-l7X" id="STX-Kp-4a4"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gSd-HZ-c9Y" customClass="RadioButton" customModule="uBlock" customModuleProvider="target">
+                                                        <rect key="frame" x="261" y="8" width="104" height="48"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="bevel" title="$34.99" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" inset="2" id="jZe-vz-Qz3" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                                            <font key="font" size="18" name="LucidaGrande"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalTitleColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
+                                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                                                <color key="value" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBackgroundColor">
+                                                                <color key="value" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.84313725490000002" green="0.84313725490000002" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeRegularFont" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="donateAmountClick:" target="KNf-wb-l7X" id="fJI-VU-ey4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </box>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="352-W6-38B">
+                                            <rect key="frame" x="280" y="131" width="14" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="lock" id="0ZB-je-gND"/>
+                                        </imageView>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-7H-TUI">
+                                            <rect key="frame" x="296" y="128" width="49" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="SECURE" allowsEditingTextAttributes="YES" id="fmr-eX-Shq">
+                                                <font key="font" size="13" name="SourceSansPro-SemiBold"/>
+                                                <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xkm-Tx-IiM" customClass="Button" customModule="uBlock" customModuleProvider="target">
+                                            <rect key="frame" x="141" y="159" width="344" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="bevel" title="Donate" bezelStyle="regularSquare" alignment="center" focusRingType="none" imageScaling="proportionallyUpOrDown" inset="2" id="rOQ-79-TXt" customClass="ButtonCell" customModule="uBlock" customModuleProvider="target">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" size="16" name="LucidaGrande-Bold"/>
+                                            </buttonCell>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                    <color key="value" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.1803921568627451" green="0.4823529411764706" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="useLucidaGrandeBoldFont" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="donateClick:" target="KNf-wb-l7X" id="CSK-x8-TVA"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <color key="fillColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </box>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="btnDonate" destination="xkm-Tx-IiM" id="9pe-4T-Ibk"/>
+                        <outlet property="btnDonate1499" destination="GA1-46-cyE" id="QDd-nw-FyJ"/>
+                        <outlet property="btnDonate1999" destination="1dF-Gk-JB5" id="a6H-D1-R3P"/>
+                        <outlet property="btnDonate2499" destination="fd4-xG-EOZ" id="9ax-3z-t9q"/>
+                        <outlet property="btnDonate3499" destination="gSd-HZ-c9Y" id="1sJ-d0-Nek"/>
+                        <outlet property="btnDonate799" destination="Gcp-79-XjL" id="RuI-1f-M63"/>
+                        <outlet property="btnDonate999" destination="Z6R-4I-28U" id="vP8-3o-y45"/>
+                        <outlet property="progress" destination="hwt-Lo-iox" id="b5Y-oc-F4u"/>
+                    </connections>
+                </viewController>
+                <customObject id="8IE-xj-GDF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="1766"/>
+        </scene>
     </scenes>
     <resources>
         <image name="add_website_normal" width="119" height="32"/>
@@ -1831,6 +2611,7 @@ Please visit </string>
         <image name="green_checkbox" width="16" height="16"/>
         <image name="green_checkbox_active" width="16" height="16"/>
         <image name="intro_image" width="444" height="388"/>
+        <image name="lock" width="14" height="16"/>
         <image name="logo-128pt" width="128" height="128"/>
         <image name="trash can" width="13" height="16"/>
         <image name="uBlockwhite" width="112" height="36"/>

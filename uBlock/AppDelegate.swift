@@ -48,6 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AssetsManager.shared.initialize()
         FilterListManager.shared.initialize()
         killLauncherIfRunning()
+        IAPManager.shared.initialize()
     }
 
     private func killLauncherIfRunning() {
@@ -71,6 +72,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if !NSWorkspace.shared.openFile(Constants.HELP_PAGE_URL, withApplication: "Safari") {
             guard let url = URL(string: Constants.HELP_PAGE_URL) else { return }
             NSWorkspace.shared.open(url)
+        }
+    }
+    
+    @IBAction func restorePurchaseMenuClick(_ sender: Any) {
+        IAPManager.shared.restorePurchases { (error, restoredPurchases) in
+            if error != nil {
+                AlertUtil.errorAlert(title: NSLocalizedString("Error", comment: ""),
+                                     message: NSLocalizedString("Unknown error occurred. Please contact support", comment: ""))
+                return
+            }
+            
+            let msg:String = {
+                if restoredPurchases?.count ?? 0 > 0 {
+                    return NSLocalizedString("All purchases have been restored", comment: "")
+                } else {
+                    return NSLocalizedString("No previous purchases were found", comment: "")
+                }
+            }()
+            AlertUtil.infoAlert(title: NSLocalizedString("Restore Purchase", comment: ""), message: msg)
         }
     }
 }

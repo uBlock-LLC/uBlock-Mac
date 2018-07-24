@@ -34,7 +34,7 @@ public struct Constants {
     //static let DONATION_PAGE_URL = "https://www.ublock.org/donate/"
     
     //static let FAQ_PAGE_URL = "https://www.ublock.org/faq/"
-    static let HELP_PAGE_URL = "https:/www.ublock.org/help/"
+    static let HELP_PAGE_URL = "https://www.ublock.org/guide/"
     static let UBLOCK_WEBSITE_URL = "https://www.ublock.org"
     
     static let CONTENT_BLOCKING_RULES_LIMIT = 50000
@@ -91,10 +91,22 @@ public struct Constants {
         static let checksum = "/checksums"
         static let filterlist = "/filterlist"
         static let pingData = "/stats"
+        static let validateReceipt = "/validate-receipt"
     }
     // ===== END REST APIs =====
     
     public enum uBlockError: Error {
         case invalidApiUrl
     }
+    
+    // In-app purchase product ids (Donation)
+    public enum Donate: String {
+        case donate799 = "org.uBlockLLC.uBlock.donate799"
+        case donate999 = "org.uBlockLLC.uBlock.donate999"
+        case donate1499 = "org.uBlockLLC.uBlock.donate1499"
+        case donate1999 = "org.uBlockLLC.uBlock.donate1999"
+        case donate2499 = "org.uBlockLLC.uBlock.donate2499"
+        case donate3499 = "org.uBlockLLC.uBlock.donate3499"
+    }
+    
 }

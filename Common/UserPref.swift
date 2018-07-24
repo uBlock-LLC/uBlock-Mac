@@ -41,9 +41,9 @@ struct UserPref {
     }
     
     // Removed due to app rejection by Apple to use the in-app purchase
-    /*static func isDonationPageShown() -> Bool {
+    static func isDonationPageShown() -> Bool {
         return readPreferenceValue(of: "DONATION_PAGE_OPENED") ?? false
-    }*/
+    }
     
     static func setDonationPageShown(_ opened: Bool) {
         writePreferenceValue { (pref) in

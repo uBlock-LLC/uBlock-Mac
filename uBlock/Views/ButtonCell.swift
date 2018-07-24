@@ -21,10 +21,20 @@
 
 import Cocoa
 
-class SectionItemCollectionViewItem: BaseSectionCollectionViewItem {
+class ButtonCell: NSButtonCell {
+
+    override func highlight(_ flag: Bool, withFrame cellFrame: NSRect, in controlView: NSView) {
+        if let controlView = controlView as? Button {
+            controlView.highlight(flag)
+        } else {
+            super.highlight(flag, withFrame: cellFrame, in: controlView)
+        }
+    }
     
-    override func update(_ item: Item?, for indexPath: IndexPath?) {
-        super.update(item, for: indexPath)
-        self.textField?.stringValue = item?.name ?? ""
+    override func drawTitle(_ title: NSAttributedString, withFrame frame: NSRect, in controlView: NSView) -> NSRect {
+        if let btn = controlView as? Button {
+            return super.drawTitle(btn.attributedTitle, withFrame: frame, in: controlView)
+        }
+        return super.drawTitle(title, withFrame: frame, in: controlView)
     }
 }

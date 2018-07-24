@@ -25,6 +25,10 @@ import SafariServices
 
 class MainVC: NSViewController {
     
+    @IBOutlet weak var filterListHeaderView: NSView!
+    @IBOutlet weak var whitelistHeaderView: NSView!
+    @IBOutlet weak var donateHeaderView: NSView!
+    
     @IBOutlet weak var lblLastUpdated: NSTextField!
     @IBOutlet weak var filterListOptionsView: NSBox!
     @IBOutlet weak var whitelistOptionsView: NSBox!
@@ -40,6 +44,7 @@ class MainVC: NSViewController {
     
     fileprivate var sectionListVC: SectionListVC? = nil
     fileprivate var sectionDetailVC: SectionDetailVC? = nil
+    fileprivate var donateVC: DonateVC? = nil
     fileprivate var lastUpdatedDate: Date? = nil
     fileprivate var lastUpdatedDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -81,6 +86,9 @@ class MainVC: NSViewController {
         } else if segue.identifier?.rawValue == "SectionDetailVC" {
             self.sectionDetailVC = segue.destinationController as? SectionDetailVC
             self.sectionListVC?.delegate = self
+        } else if segue.identifier?.rawValue == "DonateVC" {
+            self.donateVC = segue.destinationController as? DonateVC
+            self.donateVC?.delegate = self
         }
     }
     
@@ -182,7 +190,7 @@ class MainVC: NSViewController {
                 return lastFilterUpdateDate + TimeInterval(Constants.FILTER_LISTS_UPDATE_SCHEDULE_INTERVAL_IN_SECONDS)
             }
         }()
-        if currentDate >= nextFilterUpdateDate {
+        if currentDate >= nextFilterUpdateDate && UserPref.isDonationPageShown() {
             DispatchQueue.main.async { AssetsManager.shared.requestFilterUpdate() }
         }
         // check after 4 hours
@@ -236,20 +244,30 @@ class MainVC: NSViewController {
 extension MainVC : SectionListVCDelegate {
     func sectionListVC(_ vc: SectionListVC, didSelectSectionItem item: Item) {
         switch item.id ?? "" {
+        case Item.DONATE_ITEM_ID:
+            filterListHeaderView.isHidden = true
+            whitelistHeaderView.isHidden = true
+            donateHeaderView.isHidden = false
+            sectionDetailVC?.view.isHidden = true
+            donateVC?.view.isHidden = false
+            break
         case Item.WHITELIST_ITEM_ID:
             item.filterListItems = WhitelistManager.shared.getAllItems()
-            whitelistOptionsView.isHidden = false
-            lblWhitelistDesc.isHidden = false
-            filterListOptionsView.isHidden = true
-            lblFilterlistDesc.isHidden = true
+            whitelistHeaderView.isHidden = false
+            filterListHeaderView.isHidden = true
+            donateHeaderView.isHidden = true
+            sectionDetailVC?.view.isHidden = false
+            donateVC?.view.isHidden = true
             txtWhitelist.becomeFirstResponder()
+            sectionDetailVC?.updateItems(item.filterListItems, title: item.name ?? "", itemId: item.id ?? "")
         default:
-            whitelistOptionsView.isHidden = true
-            lblWhitelistDesc.isHidden = true
-            filterListOptionsView.isHidden = false
-            lblFilterlistDesc.isHidden = false
+            whitelistHeaderView.isHidden = true
+            filterListHeaderView.isHidden = false
+            donateHeaderView.isHidden = true
+            sectionDetailVC?.view.isHidden = false
+            donateVC?.view.isHidden = true
+            sectionDetailVC?.updateItems(item.filterListItems, title: item.name ?? "", itemId: item.id ?? "")
         }
-        sectionDetailVC?.updateItems(item.filterListItems, title: item.name ?? "", itemId: item.id ?? "")
     }
 }
 
@@ -257,5 +275,15 @@ extension MainVC : SectionDetailVCDelegate {
     func onTooManyRulesActiveError() {
         let message = NSLocalizedString("Too many filters enable, Safari cannot use more than 50000 rules.", comment: "")
         AlertUtil.toast(in: rightPanel, message: message, toastType: .error)
+    }
+}
+
+extension MainVC : DonateVCDelegate {
+    func donateVC(_ vc: DonateVC, onError errorMsg: String) {
+        AlertUtil.toast(in: rightPanel, message: errorMsg, toastType: .error)
+    }
+    
+    func donateVC(_ vc: DonateVC, onSuccess successMsg: String) {
+        AlertUtil.toast(in: rightPanel, message: successMsg)
     }
 }

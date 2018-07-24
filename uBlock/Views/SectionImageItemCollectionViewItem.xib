@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="176" height="36"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYA-ng-fSS">
-                    <rect key="frame" x="29" y="9" width="118" height="19"/>
+                    <rect key="frame" x="52" y="9" width="118" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="UUV-7v-lJU">
                         <font key="font" size="14" name="LucidaGrande"/>
@@ -21,14 +21,23 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-oj-EN9">
+                    <rect key="frame" x="31" y="11" width="17" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="heart" id="W0x-4h-dKT"/>
+                </imageView>
             </subviews>
             <point key="canvasLocation" x="69" y="-111"/>
         </customView>
-        <collectionViewItem id="dYx-dp-oiZ" customClass="SectionItemCollectionViewItem" customModule="uBlock" customModuleProvider="target">
+        <collectionViewItem id="dYx-dp-oiZ" customClass="SectionImageItemCollectionViewItem" customModule="uBlock" customModuleProvider="target">
             <connections>
-                <outlet property="textField" destination="eYA-ng-fSS" id="sbm-lB-P26"/>
+                <outlet property="imageView" destination="UWk-oj-EN9" id="agP-Vc-NLE"/>
+                <outlet property="textField" destination="eYA-ng-fSS" id="E37-Pv-udn"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="OvQ-MG-oLC"/>
             </connections>
         </collectionViewItem>
     </objects>
+    <resources>
+        <image name="heart" width="17" height="14"/>
+    </resources>
 </document>
